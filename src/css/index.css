@@ -1,0 +1,66 @@
+:root {
+  /* Primary Colors - Construction Theme */
+  --primary-color: #E65100; /* Construction Orange - Safety Vests */
+  --primary-light: #FF8A65; /* Lighter Orange */
+  --primary-dark: #BF360C; /* Darker Orange */
+  
+  /* Secondary Colors - Construction Materials */
+  --secondary-color: #455A64; /* Steel Blue - Metal Structures */
+  --secondary-light: #78909C; /* Lighter Steel */
+  --secondary-dark: #263238; /* Darker Steel */
+  
+  /* Surface Colors */
+  --surface-color: #FFFFFF; /* White */
+  --background-color: #F5F5F5; /* Light Gray */
+  
+  /* Safety Colors */
+  --error-color: #D32F2F; /* Safety Red - Danger */
+  --success-color: #388E3C; /* Safety Green - Safe/Complete */
+  --warning-color: #FFA000; /* Safety Yellow - Caution */
+  --info-color: #1976D2; /* Safety Blue - Information */
+  
+  /* Text Colors */
+  --on-primary: #FFFFFF; /* White */
+  --on-secondary: #FFFFFF; /* White */
+  --on-surface: #212121; /* Dark Gray */
+  --on-error: #FFFFFF; /* White */
+  
+  /* Construction Material Colors */
+  --concrete-color: #9E9E9E; /* Concrete Gray */
+  --wood-color: #8D6E63; /* Wood Brown */
+  --metal-color: #78909C; /* Metal Gray */
+  --glass-color: #B0BEC5; /* Glass Blue */
+  
+  /* Status Colors */
+  --status-planned: var(--info-color);
+  --status-in-progress: var(--warning-color);
+  --status-completed: var(--success-color);
+  --status-delayed: var(--error-color);
+  
+  /* Shadows */
+  --shadow-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  --shadow-2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  --shadow-3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  --shadow-4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  --shadow-5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  
+  /* Transitions */
+  --elevation-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+
+}
+  
+  /* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

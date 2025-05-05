@@ -1,0 +1,125 @@
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+    .login-container {
+        flex-direction: row-reverse !important;
+    }
+    .login-container {
+        box-shadow: var(--shadow-3);
+        border-radius: 10px;
+    }
+}
+  
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+
+}
+/* mobile and default */
+.sign-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.sign-background {
+    background: linear-gradient(135deg, var(--secondary-dark), var(--secondary-color));
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.construction-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--on-primary);
+}
+.construction-overlay > svg {
+    font-size: 66px;
+    color: var(--primary-color);
+}
+.construction-overlay > h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 10px 0px;
+}
+
+
+.sign-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    /* background: var(--glass-color); */
+}
+
+.sign-card h1 {
+    color: var(--primary-color);
+}
+
+.sign-header {
+    margin-top: 20px;
+}
+
+.sign-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    margin: 5px 0px;
+    padding: 0 10px;
+    width: 100%;
+    color: var(--on-surface);
+}
+.form-group > label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px;
+}
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--concrete-color);
+    border-radius: 5px;
+    color: var(--on-surface);
+    background: var(--glass-color);
+}
+.form-group input:focus {
+    outline: none;
+}
+
+.sign-form > button {
+    width: 95%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid var(--concrete-color);
+    border-radius: 5px;
+    color: var(--on-primary);
+    background: var(--primary-color);
+    margin: 20px;
+}
+.sign-form > button:hover {
+    background: var(--primary-dark);
+}
+

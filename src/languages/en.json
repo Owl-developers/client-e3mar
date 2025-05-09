@@ -1,0 +1,18 @@
+{
+    "buttons": {
+        "login": "Login",
+        "register": "Register"
+    },
+    "inputLabels": {
+        "username": "Username",
+        "password": "Password",
+        "email": "Email",
+        "phone": "Phone"
+    },
+    "inputPlaceholders": {
+        "username": "Enter your username",
+        "password": "Enter your password",
+        "email": "Enter your email",
+        "phone": "Enter your phone"
+    }
+}

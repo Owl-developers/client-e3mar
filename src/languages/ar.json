@@ -1,0 +1,23 @@
+{
+    "buttons": {
+        "login": "تسجيل الدخول",
+        "register": "إنشاء حساب"
+    },
+    "inputLabels": {
+        "username": "اسم المستخدم",
+        "password": "كلمة المرور",
+        "email": "الايميل",
+        "phone": "الهاتف"
+    },
+    "inputPlaceholders": {
+        "username": "ادخل اسمك",
+        "password": "ادخل كلمة السر",
+        "email": "ادخل الايميل",
+        "phone": "ادخل الهاتف"
+    },
+    "navigate": {
+        "login": "ليس لديك حساب؟ إنشاء حساب",
+        "register": "لديك حساب؟ تسجيل الدخول"
+    }
+
+}

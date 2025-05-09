@@ -1,5 +1,9 @@
 /* Tablet (768px and up) */
 @media (min-width: 768px) {
+    .sign-container {
+        display: flex !important;
+        flex-direction: row-reverse !important;
+    }
     .login-container {
         flex-direction: row-reverse !important;
     }
@@ -15,10 +19,10 @@
 }
 /* mobile and default */
 .sign-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-rows: 250px 1fr;
+    grid-template-columns: 1fr;
+
     height: 100vh;
     max-width: 1024px;
     margin: 0 auto;
@@ -96,30 +100,5 @@
     justify-content: center;
     margin: 10px 0px;
 }
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid var(--concrete-color);
-    border-radius: 5px;
-    color: var(--on-surface);
-    background: var(--glass-color);
-}
-.form-group input:focus {
-    outline: none;
-}
 
-.sign-form > button {
-    width: 95%;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: 600;
-    border: 2px solid var(--concrete-color);
-    border-radius: 5px;
-    color: var(--on-primary);
-    background: var(--primary-color);
-    margin: 20px;
-}
-.sign-form > button:hover {
-    background: var(--primary-dark);
-}
 

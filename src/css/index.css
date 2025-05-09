@@ -18,13 +18,7 @@
   --success-color: #388E3C; /* Safety Green - Safe/Complete */
   --warning-color: #FFA000; /* Safety Yellow - Caution */
   --info-color: #1976D2; /* Safety Blue - Information */
-  
-  /* Text Colors */
-  --on-primary: #FFFFFF; /* White */
-  --on-secondary: #FFFFFF; /* White */
-  --on-surface: #212121; /* Dark Gray */
-  --on-error: #FFFFFF; /* White */
-  
+    
   /* Construction Material Colors */
   --concrete-color: #9E9E9E; /* Concrete Gray */
   --wood-color: #8D6E63; /* Wood Brown */
@@ -63,4 +57,56 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.error-modal {
+  color: var(--error-color);
+  border-bottom: 3px solid var(--error-color);
+}
+.success-modal {
+  color: var(--success-color);
+  border-bottom: 3px solid var(--success-color);
+}
+
+.dialog-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.input-error-message {
+  color: var(--error-color);
+  font-weight: 600;
+  font-size: 12px;
+}
+/* add * befor input-error-message */
+.input-error-message::before {
+  content: "*";
+  color: var(--error-color);
+}
+input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--concrete-color);
+  border-radius: 5px;
+  color: var(--on-surface);
+  background: var(--glass-color);
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  width: 95%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid var(--concrete-color);
+  border-radius: 5px;
+  color: var(--on-primary);
+  background: var(--primary-color);
+  margin: 20px;
+}
+button:hover {
+  background: var(--primary-dark);
 }

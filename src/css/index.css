@@ -44,12 +44,27 @@
 
 /* Tablet (768px and up) */
 @media (min-width: 768px) {
-
+  .app-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 50px calc(100vh - 50px);
+    grid-template-areas: 
+    "appbar appbar"
+    "sidebar content"
+    ;
+  }
+  .sidebar {
+    position: relative !important;
+    transform: none !important;
+    grid-area: sidebar;
+  }
+  .main-content {
+    grid-area: content;
+  }
 }
-  
-  /* Desktop (1024px and up) */
-@media (min-width: 1024px) {
 
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
 }
 
 * {
@@ -57,6 +72,10 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
 }
 
 .error-modal {
@@ -83,6 +102,72 @@
   content: "*";
   color: var(--error-color);
 }
+
+.app-container {
+  display: grid;
+  /* grid-template-columns: 1fr ; */
+}
+.sidebar {
+  position: fixed;
+  background-color: var(--secondary-dark);
+  height: 100%;
+  width: 250px;
+  padding: 10px;
+  transform: translateX(-250px);
+
+}
+
+.sidebar-open {
+  transform: translateX(0);
+  transition: transform 1s ease;
+}
+
+.burger-menu {
+  cursor: pointer;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* height: 50px; */
+  padding: 5px;
+  color: var(--surface-color);
+}
+
+.sidebar-header > img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.sidebar-app-name {
+  text-align: center;
+  width: 100%;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-nav > a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--surface-color);
+  height: 50px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.sidebar-nav > a:hover {
+  background-color: var(--secondary-color);
+}
+
+
+
 input {
   width: 100%;
   padding: 10px;

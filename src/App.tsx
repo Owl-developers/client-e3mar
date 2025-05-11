@@ -1,32 +1,82 @@
-import { useState } from 'react'
-import { useQuery, gql } from '@apollo/client';
+import React, { createContext, useEffect, useState, useContext } from 'react'
+import { Link, Outlet } from 'react-router-dom';
+import AppBar from './component/AppBar';
+import NavBar from './component/NavBar';
 
-import './App.css'
+import logo from './images/avatar.png'
 
-const schema = gql `
-  query login {
-    login(
-      username: "ebrahimallawi", 
-      password: "ebrahimallawi",
-      email: "ebrahimallawi4@gmail.com"
-    ) {
-      username,isSuperAdmin,_id
-  }
-}
-`
+export const SideBarContext = createContext({
+  sideBarOpen: false, 
+  widthScreen:window.innerWidth,  
+  setSideBarOpen:(status: boolean)=> {},
+  setWidthScreen: (width: number)=>{}
+})
 
-function App() {
-  const { loading, error, data } = useQuery(schema);
+function App():React.ReactElement {
+  const [sideBarOpen, setSideBarOpen] = useState<boolean>(false)
+  const [widthScreen, setWidthScreen] = useState<number>(window.innerWidth)
+  useEffect(() => {
+    console.log('app')
+  }, [])
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error : {error.message}</p>;
-  console.log(data.login.isSuperAdmin)
-  const a = String(data.login.isSuperAdmin)
   return (
+    <SideBarContext.Provider value={{sideBarOpen,widthScreen, setSideBarOpen, setWidthScreen}}>
+    <div className="app-container">
+      <AppBar/>
+      <SideBar/>
+      <main className='main-content'>
+        awd
+        <Outlet/>
+      </main>
+    </div>
+    </SideBarContext.Provider>
+  )
+}
+
+function SideBar(): React.ReactElement | null {
+
+  const {sideBarOpen, widthScreen, setWidthScreen} = useContext(SideBarContext)
+  
+  useEffect(() => {
+    console.log('sideBarOpen', sideBarOpen)
+  }, [sideBarOpen])
+
+  window.onresize = (e => {
+    setWidthScreen(
+       window.innerWidth
+    )
+  })
+
+  useEffect(() => {
+    console.log(window.innerWidth)
+    if(sideBarOpen && widthScreen < 769) {
+      document.getElementById("aside")?.classList.add('sidebar-open')
+    }
+  }, [widthScreen])
+  useEffect(() => {
+    if(sideBarOpen && widthScreen < 769) {
+      setTimeout(() => {
+        document.getElementById("aside")?.classList.add('sidebar-open')
+        
+      }, 1);
+    }
+  }, [sideBarOpen])
+
+  if (widthScreen < 769 && !sideBarOpen) {
+    return null;
+  }
+
+  return(
     <>
-      <h1>Hello World</h1>
-      {a}
-      
+    <aside id='aside' className={`sidebar`}>
+      <div className="sidebar-header">
+        <img src={logo} alt="e3mar logo" />
+        <div className="sidebar-app-name">
+          <h1>E3mar</h1>
+        </div>
+      </div>
+      <NavBar/>
+    </aside>
     </>
   )
 }

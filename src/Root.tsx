@@ -10,6 +10,7 @@ import Admin from "./pages/admin/Admin";
 import User from "./pages/user/User";
 import { useDispatch, useSelector } from "react-redux";
 import  RootState  from "./store/store";
+import App from "./App";
 const ModalsContext = createContext({message: '', title: '', open: false, setMessage: (message: string) => {}, setTitle: (title: string) => {}, setOpen: (open: boolean) => {}})
 
 export function useModalsContext() {
@@ -75,10 +76,10 @@ export default function Root() {
     console.log("userdata", userData.isSuperAdmin)
 
     useEffect(() => {
-        if (languageApp === 'ar') {
-            document.documentElement.dir = 'rtl';
-        } else {
+        if (languageApp == 'en') {
             document.documentElement.dir = 'ltr';
+        } else {
+            document.documentElement.dir = 'rtl';
         }
         x++
         console.log('root')
@@ -96,16 +97,17 @@ export default function Root() {
                         <Route element={<ProtectSignRout/>}>
                             <Route path="/register" element={<Register />} />
                         </Route>
-
-                        <Route element={<ProtectAdminRout/>}>
-                            <Route path="/admin" element={<Admin />}>
-                                
+                        <Route element={<App/>}>
+                            <Route element={<ProtectAdminRout/>}>
+                                <Route path="/admin" element={<Admin />}>
+                                    
+                                </Route>
                             </Route>
-                        </Route>
-                            
-                        <Route element={<ProtectUserRout/>}>
-                            <Route path="/user" element={<User />}>
+                                
+                            <Route element={<ProtectUserRout/>}>
+                                <Route path="/user" element={<User />}>
 
+                                </Route>
                             </Route>
                         </Route>
 

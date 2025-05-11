@@ -14,5 +14,9 @@
         "password": "Enter your password",
         "email": "Enter your email",
         "phone": "Enter your phone"
+    },
+    "navigate": {
+        "login": "Don't have an account? Register",
+        "register": "Have an account? Login"
     }
 }

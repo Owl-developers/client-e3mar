@@ -35,7 +35,7 @@ export var staticWord = {
   }
 }
 export type lang = "en" | "ar"
-var initialState:lang = "ar"
+var initialState:lang = "en"
 const languageApp = createSlice({
   name: 'languages app',
   initialState,
